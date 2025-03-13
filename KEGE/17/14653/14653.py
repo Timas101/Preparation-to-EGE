@@ -1,4 +1,4 @@
-massive = [int(x[:-1]) for x in open(r"C:\Users\timof\Documents\Preparation\KEGE\№17\14653\14653.txt").readlines()]
+massive = [int(x[:-1]) for x in open(r"E:\Preparation-to-EGE\KEGE\17\14653\14653.txt").readlines()]
 
 del_17_list = []
 for element in massive:
