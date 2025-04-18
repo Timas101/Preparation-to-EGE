@@ -1,9 +1,8 @@
 alp = [chr(i) for i in range(ord('C'), ord('Z') + 1)]
 alp_ = alp + ['0']
 alp__ = alp + [hex(i)[2:].upper() for i in range(1, 12, 2)]
-base_string = str(open(r"E:\Preparation-to-EGE\KEGE\24\21421\24_21421.txt").readline())
-'''
-string = ''
+base_string = str(open(r"24_21421.txt").readline())
+
 for letter in alp:
     base_string = base_string.replace(letter, ' ')
 string_aray = base_string.split()
@@ -42,3 +41,5 @@ for element in reversed(base_string):
         else:
             count += 1
 print(max_count)
+
+'''
