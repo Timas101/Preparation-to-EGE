@@ -1,0 +1,11 @@
+for a in range(0, 1000):
+    flag = True
+    for x in range(0, 1000):
+        if (((x & 52 != 0) and (x & 48 == 0)) <= (not(x & a == 0))):
+            continue
+        else:
+            flag = False
+            break
+    if flag:
+        print(a)
+        break
