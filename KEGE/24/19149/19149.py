@@ -27,6 +27,7 @@ for simb in string:
             
         if simb == '+' and last_simb == '+':
             right_match = False
+            len = 0
         else:
             last_simb = simb
             len += 1
