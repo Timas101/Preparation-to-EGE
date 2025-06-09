@@ -1,15 +1,28 @@
-def NToR(n):
-    n_bin = bin(n)[2:]
-    if n_bin.count('1') % 2 == 0:
-        n_bin = n_bin + '0'
-        n_bin_res = '10' + n_bin[2:]
-    else:
-        n_bin = n_bin + '1'
-        n_bin_res = '11' + n_bin[2:]
-    return int(n_bin_res, 2)
+def NtoR(n):
+    n_four = ToFour(n)
+    if n % 3 == 0:
+        last = n_four[-1]
+        start = n_four[0]
+        n_ = n_four[:1]
+        n_ = n_four[-1:]
+        n_res =  last + n_ + start + '1'
+    if n % 3 != 0:
+        n_res = n_four + str(n % 3)
+    
+    return int(n_res, 4)
 
-for n in range(1, 1000):
-    r = NToR(n)
-    if r > 480:
-        print(n)
-        break
+def ToFour(n):
+    res = ''
+    while n != 0:
+        ost = str(n % 4)
+        res = ost + res
+        n = n // 4
+    return res
+
+res = 0
+for n in range(1, 1000, 2):
+    r  =  NtoR(n)
+    if r <= 340:
+        res = max(r, res)
+
+print(res)
